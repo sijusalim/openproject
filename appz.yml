@@ -12,11 +12,22 @@ build:
 
 deploy:
     context: alpha/DEV
-    replicas: 1
+    type: statefulset
+    replicas: 2
     port:
     - 80
-    
+volumes:
+- claim: openproject-assets
+  mount: /appz/data/openproject  
+  name: assets
+  size: 5Gi
+
 properties:
+    ATTACHMENTS_STORAGE_PATH: /appz/data/openproject
+    FILESYNC_ENABLE: "yes"
+    RSYNC_SECRET:
+      vault: RSYNC_SECRET
+
     SECRET_KEY_BASE: 
       vault: SECRET_KEY_BASE
     POSTGRES_HOST: openproject-postgres-13-x    
