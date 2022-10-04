@@ -36,4 +36,4 @@ properties:
     POSTGRES_USER: springbootweb
     POSTGRES_PASSWORD: 
       vault: POSTGRESQL_OPENPROJECT_PASSWORD
-    revision: 35
+    revision: 36
