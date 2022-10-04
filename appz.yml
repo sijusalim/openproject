@@ -13,7 +13,7 @@ build:
 deploy:
     context: sijusalim/DEV
     type: statefulset
-    replicas: 2
+    replicas: 1
     port:
     - 80
 volumes:
@@ -32,8 +32,8 @@ properties:
       vault: SECRET_KEY_BASE
     POSTGRES_HOST: postgres13-master-13-x    
     POSTGRES_PORT: 5432
-    POSTGRES_DB: openproject
-    POSTGRES_USER: openproject
+    POSTGRES_DB: springbootweb
+    POSTGRES_USER: springbootweb
     POSTGRES_PASSWORD: 
       vault: POSTGRESQL_OPENPROJECT_PASSWORD
     revision: 35
